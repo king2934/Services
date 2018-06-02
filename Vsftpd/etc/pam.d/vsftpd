@@ -1,0 +1,2 @@
+auth    required        /usr/local/vsftpd/lib/pam_userdb.so     db=/usr/local/vsftpd/users
+account required        /usr/local/vsftpd/lib/pam_userdb.so     db=/usr/local/vsftpd/users
