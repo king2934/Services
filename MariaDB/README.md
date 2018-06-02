@@ -1,0 +1,1 @@
+# MariaDB 的说明文件 安装说明请查看INSTALL.md
