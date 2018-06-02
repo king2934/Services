@@ -9,6 +9,18 @@
 	mkdir /usr/local/MariaDB/data
 	chown -R mariadb:mariadb /usr/local/MariaDB/data
 	
+	vi /usr/local/MariaDB/etc/my.cnf
+		[mysqld]
+		user    =mariadb
+		port    =3306
+		basedir =/usr/local/MariaDB
+		datadir =/usr/local/MariaDB/data
+		socket  =/usr/local/MariaDB/mariadb.sock
+		
+		[mysqld_safe]
+		log-error=/usr/local/MariaDB/logs/mariadb.log
+		pid-file=/usr/local/MariaDB/mariadb.pid
+	
 	wget https://mirrors.shu.edu.cn/mariadb/mariadb-10.3.7/source/mariadb-10.3.7.tar.gz
 	tar -zxf mariadb-10.3.7.tar.gz
 	cd mariadb-10.3.7
@@ -31,3 +43,15 @@
 	-DWITH_EMBEDDED_SERVER=1 \
 	-DENABLED_LOCAL_INFILE=1 \
 	-DWITHOUT_TOKUDB=1
+	
+	make 
+	make install
+	
+	/usr/local/MariaDB/scripts/mysql_install_db \
+	--user=mariadb \
+	--defaults-file=/usr/local/MariaDB/etc/my.cnf \
+	--defaults-extra-file=/usr/local/MariaDB/etc/my.cnf \
+	--basedir=/usr/local/MariaDB \
+	--datadir=/usr/local/MariaDB/data 
+	
+	chown -R mariadb:mariadb /usr/local/MariaDB
