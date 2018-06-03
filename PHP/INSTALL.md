@@ -1,6 +1,6 @@
 # PHP的安装说明与配置  
 
-## 1. PHP单独安装
+## 1. PHP安装 apache(httpd)
 	yum install libxml2-devel 
 	wget http://php.net/distributions/php-7.2.6.tar.gz
 	
