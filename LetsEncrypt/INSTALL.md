@@ -74,6 +74,9 @@
 		
 ####	Apache配置文件中添加证书位置（apache 版本为2.4.8以上，本人版本为2.4.37）
 	
+	LoadModule rewrite_module modules/mod_rewrite.so
+	LoadModule ssl_module modules/mod_ssl.so
+	
 	SSLEngine on
 	SSLProtocol all -SSLv3
 	SSLCipherSuite HIGH:MEDIUM:!aNULL:!MD5
