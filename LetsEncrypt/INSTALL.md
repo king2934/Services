@@ -72,7 +72,12 @@
 	ls 
 		cert.pem  chain.pem  fullchain.pem  privkey.pem  README
 		
-####	Apache配置文件中添加证书位置			
+####	Apache配置文件中添加证书位置
+	
+	SSLEngine on
+	SSLProtocol all -SSLv3
+	SSLCipherSuite HIGH:MEDIUM:!aNULL:!MD5
+	
 	#证书公钥存放位置
 	SSLCertificateFile /etc/letsencrypt/live/lanhuispace.com/fullchain.pem
 
