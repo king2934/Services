@@ -72,7 +72,7 @@
 	ls 
 		cert.pem  chain.pem  fullchain.pem  privkey.pem  README
 		
-####	Apache配置文件中添加证书位置（apache 版本为2.4.8以上）
+####	Apache配置文件中添加证书位置（apache 版本为2.4.8以上，本人版本为2.4.37）
 	
 	SSLEngine on
 	SSLProtocol all -SSLv3
