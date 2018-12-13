@@ -1,5 +1,5 @@
 # Let's Encrypt证书申请及与Apache服务器整合配置
-####	证书申请
+####	一、证书申请
 ##### 获取Certbot工具
 	git clone https://github.com/letsencrypt/letsencrypt
 	cd letsencrypt
@@ -77,7 +77,7 @@
 *	fullchain.pem	- Nginx所需要ssl_certificate文件
 *	privkey.pem 	- 安全证书KEY文件
 		
-####	Apache配置文件中添加证书位置（apache 版本为2.4.8以上，本人版本为2.4.37）
+####	二、Apache配置文件中添加证书位置（apache 版本为2.4.8以上，本人版本为2.4.37）
 	
 	LoadModule rewrite_module modules/mod_rewrite.so
 	LoadModule ssl_module modules/mod_ssl.so
