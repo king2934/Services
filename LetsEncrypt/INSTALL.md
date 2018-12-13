@@ -1,5 +1,5 @@
 # Let's Encrypt证书申请及与Apache服务器整合配置
-
+####	证书申请
 ##### 获取Certbot工具
 	git clone https://github.com/letsencrypt/letsencrypt
 	cd letsencrypt
@@ -63,4 +63,22 @@
 	
 #####	【验证步骤】结束
 
+#####	上面的操作完成后 可能要恭喜您了，证书申请成功。进入证书目录。
+
+	cd /etc/letsencrypt
+	ls
+		accounts  archive  csr  keys  live ...
+	cd live/lanhuispace.com/
+	ls 
+		cert.pem  chain.pem  fullchain.pem  privkey.pem  README
+		
+####	Apache配置文件中包括证书 			
+	#证书公钥存放位置
+	SSLCertificateFile /etc/letsencrypt/live/lanhuispace.com/fullchain.pem
+
+	#证书私钥存放位置
+	SSLCertificateKeyFile /etc/letsencrypt/live/lanhuispace.com/privkey.pem
+
+END
+ 
 	
