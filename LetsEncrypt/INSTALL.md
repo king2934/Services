@@ -72,7 +72,7 @@
 	ls 
 		cert.pem  chain.pem  fullchain.pem  privkey.pem  README
 		
-####	Apache配置文件中包括证书 			
+####	Apache配置文件中添加证书位置			
 	#证书公钥存放位置
 	SSLCertificateFile /etc/letsencrypt/live/lanhuispace.com/fullchain.pem
 
