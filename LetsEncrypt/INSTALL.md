@@ -22,7 +22,7 @@
 	上述有两个交互式的提示
 	确认同意才能继续
 
-#####	要注意以下 在你的DNS解析中 添加一条 TXT解析 
+#####	要注意以下画面时不要操作 完成【验证步骤】后回车
 	-------------------------------------------------------------------------------
 	Please deploy a DNS TXT record under the name
 	_acme-challenge.lanhuispace.com with the following value:
@@ -34,6 +34,7 @@
 	Press Enter to Continue
 	Waiting for verification...
 	Cleaning up challenges
+#####	验证步骤 1 添加一条DNS解析 以验证你对此域名的所有权
 <div>
 	<table border="0">
 		<tr>
@@ -48,3 +49,18 @@
 		</tr>
 	</table>
 </div>
+
+#####	验证步骤 2 在完成【验证步骤 1】后 验证是否生效 windows 下cmd 命令窗口
+	windows 下cmd 命令窗口
+	
+	nslookup -q=txt _acme-challenge.lanhuispace.com
+	
+	非权威应答:
+	_acme-challenge.lanhuispace.com text =
+
+        "69JC26cO8JaZDPhwSsVtumYEOcuT7-1nMHi1_SFVH2A"
+
+	
+#####	【验证步骤】结束
+
+	
