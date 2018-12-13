@@ -71,6 +71,11 @@
 	cd live/lanhuispace.com/
 	ls 
 		cert.pem  chain.pem  fullchain.pem  privkey.pem  README
+
+*	cert.pem  		- Apache服务器端证书
+*	chain.pem  		- Apache根证书和中继证书
+*	fullchain.pem	- Nginx所需要ssl_certificate文件
+*	privkey.pem 	- 安全证书KEY文件
 		
 ####	Apache配置文件中添加证书位置（apache 版本为2.4.8以上，本人版本为2.4.37）
 	
