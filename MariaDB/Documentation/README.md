@@ -16,7 +16,7 @@
 	
 ##	新建数据库表
 	create table if not exists table_name(
-		id int not null primary key auto_increment comment '自增主键',
+		id int unsigned not null primary key auto_increment comment '自增主键',
 		name varchar(32) null comment '姓名字段',
 		index name(name)
 	)default charset=utf8 auto_increment=1;
