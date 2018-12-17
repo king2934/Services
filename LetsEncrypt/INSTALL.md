@@ -73,6 +73,8 @@
 	cd live/lanhuispace.com/
 	ls 
 		cert.pem  chain.pem  fullchain.pem  privkey.pem  README
+	
+	openssl x509 -in  /etc/letsencrypt/live/lanhuispace.com/cert.pem -noout -text 
 
 *	cert.pem  		- Apache服务器端证书
 *	chain.pem  		- Apache根证书和中继证书
