@@ -20,6 +20,10 @@
 	net start mssqlserver
 
 #### 正常sa登录密码123456	
+
+#####	恢复windows验证登录sqlserver方式 sa 登录  执行以下SQL
+	exec sp_grantlogin '主机名\Administrator'
+	exec sp_addsrvrolemember '主机名\Administrator','sysadmin'
 #
 #	End
 	
