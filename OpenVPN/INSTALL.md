@@ -87,5 +87,22 @@
 		2.输入CA密码
 		3.客户端证书 /usr/local/openVPN/easy-rsa/pki/issued/Ops.crt 
 		
-#####	客户端和服务端的证书已经配置完毕		
+#####	客户端和服务端的证书已经配置完毕
+
+#####	服务器密钥及证书
+	1. /usr/local/openVPN/easy-rsa/pki/ca.crt
+	2. /usr/local/openVPN/easy-rsa/pki/private/server.key
+	3. /usr/local/openVPN/easy-rsa/pki/issued/server.crt
+	4. /usr/local/openVPN/easy-rsa/pki/dh.pem
+	
+#####	客户端证书和秘钥
+	1. /usr/local/openVPN/easy-rsa/pki/ca.crt
+	2. /usr/local/openVPN/easy-rsa/pki/issued/Ops.crt
+	3. /root/client/easy-rsa/pki/private/Ops.key
+	
+#####	为服务端编写openvpn的配置文件
+	
+	
+
+
 		
