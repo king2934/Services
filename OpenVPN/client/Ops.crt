@@ -2,83 +2,83 @@ Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number:
-            d5:68:27:79:e5:77:e6:36:49:e0:f8:aa:bc:d9:e5:5a
+            ae:84:d2:db:6a:74:31:02:0d:d7:b0:fd:a0:4e:99:ec
     Signature Algorithm: sha256WithRSAEncryption
-        Issuer: CN=hostopenvpn
+        Issuer: CN=hostCA
         Validity
-            Not Before: Feb 13 09:22:23 2019 GMT
-            Not After : Jan 28 09:22:23 2022 GMT
-        Subject: CN=clientcomname
+            Not Before: Feb 14 05:25:53 2019 GMT
+            Not After : Jan 29 05:25:53 2022 GMT
+        Subject: CN=clienthost
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
                 Modulus:
-                    00:c0:d7:a2:d5:17:cd:f6:95:7d:b1:ba:00:45:75:
-                    8a:48:0d:c4:2f:f0:80:e8:bd:51:14:a4:8e:9c:e5:
-                    44:d5:c8:38:58:24:d7:4f:cf:8a:e6:fe:0e:e7:51:
-                    38:4e:31:34:0f:04:61:4b:54:25:15:70:96:ce:fd:
-                    90:4e:cc:b2:cb:2f:7b:d8:6f:77:b5:da:21:49:b1:
-                    3c:fa:d4:b7:aa:8b:1e:a8:9d:b7:56:70:f8:03:f8:
-                    c3:20:c1:73:22:0e:8f:6b:e7:c7:20:63:b3:a5:a0:
-                    bc:c3:05:ba:11:7b:4b:47:e3:ee:54:45:9c:a6:23:
-                    2b:eb:d8:4f:c7:73:92:19:8c:79:f2:e0:ff:45:9a:
-                    87:6c:38:7e:64:c3:b0:dc:01:f6:d8:ce:92:fe:59:
-                    d3:10:4f:1b:eb:05:2d:b5:09:cf:49:eb:51:70:0f:
-                    38:53:24:0f:7a:f8:e8:8c:43:75:68:36:0e:0d:94:
-                    46:84:42:0a:42:4d:02:e9:c8:c9:25:06:5a:14:7b:
-                    13:4e:9e:07:0b:eb:59:fa:57:f1:33:e9:78:bc:2d:
-                    27:0c:ed:b3:77:7e:8e:e7:a4:be:78:06:1c:99:c0:
-                    24:86:f9:9f:db:e5:cd:d7:3a:51:43:cf:bc:90:fc:
-                    35:10:08:c5:8c:55:96:4d:ff:27:8e:d4:da:1c:6a:
-                    4f:d9
+                    00:ec:17:61:e6:7b:79:c7:d0:01:3f:4e:0b:26:68:
+                    57:af:e2:62:9b:2d:f2:b4:75:66:6d:61:27:63:ef:
+                    9d:f3:9f:9b:76:fb:8c:3b:f5:20:54:83:50:91:69:
+                    87:ca:fd:aa:d8:f1:ca:69:58:44:d6:4e:cf:cb:ae:
+                    fe:5f:53:e0:cf:f1:41:67:4d:74:1c:72:ff:21:4f:
+                    43:30:a3:01:e9:07:04:6b:7c:95:be:f7:c5:84:37:
+                    ce:4e:e8:eb:28:3a:d5:e2:8d:40:63:51:ad:a5:99:
+                    54:49:0d:dd:50:0e:bf:ec:25:22:de:15:b1:02:80:
+                    d8:fe:e3:22:e6:4a:e4:a1:9d:f5:b0:5b:f6:c9:81:
+                    b5:09:01:33:4e:c1:77:44:0f:94:09:42:a2:d6:7f:
+                    bf:bc:ce:60:0d:31:46:63:79:d0:16:6f:38:7e:05:
+                    85:8a:05:5a:aa:9d:68:6e:29:17:80:ea:9d:4f:73:
+                    4e:84:9a:b8:59:40:87:9c:dc:3a:55:40:68:67:7b:
+                    32:ab:5b:db:23:7c:e9:a4:73:33:10:fc:7e:75:42:
+                    cb:5c:2d:c5:33:aa:db:ea:d0:d6:13:4e:e2:29:7b:
+                    87:19:3d:12:7e:48:bd:94:4d:01:bb:54:ce:34:bf:
+                    59:ed:c1:84:37:6b:2e:50:dd:25:c7:0c:d7:9e:d4:
+                    cc:47
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
             X509v3 Basic Constraints: 
                 CA:FALSE
             X509v3 Subject Key Identifier: 
-                CA:EB:7A:4B:CA:75:DD:69:E3:FD:26:E6:07:12:36:C9:F1:3E:8C:98
+                40:C4:E2:96:2D:74:D9:CE:8E:0E:C4:A6:AE:C1:32:9C:07:AF:6F:7E
             X509v3 Authority Key Identifier: 
-                keyid:DA:9D:9C:17:4A:30:52:5E:15:32:AC:B6:1E:DB:43:89:E7:95:6C:0A
-                DirName:/CN=hostopenvpn
-                serial:C4:A7:F2:B9:23:78:01:AC
+                keyid:64:A1:D8:0B:36:A3:55:7E:BE:AE:61:0B:4B:B5:36:FA:77:68:FD:F2
+                DirName:/CN=hostCA
+                serial:A8:F9:4C:AD:FF:12:A4:17
 
             X509v3 Extended Key Usage: 
                 TLS Web Client Authentication
             X509v3 Key Usage: 
                 Digital Signature
     Signature Algorithm: sha256WithRSAEncryption
-         b8:f8:25:a6:8f:d8:50:6d:36:0b:19:e0:b7:da:4b:1f:3f:0f:
-         12:8c:a8:7e:a9:96:79:41:81:86:68:87:e0:dd:e4:fd:ca:06:
-         d5:34:d3:64:6a:21:25:b2:cc:fd:46:5a:cd:af:ba:3e:63:59:
-         02:6f:56:d9:de:57:cc:e3:93:dc:c7:19:7c:cb:9e:87:cd:f1:
-         8d:4b:d0:8e:64:a6:6f:c9:1c:1c:53:b3:98:72:9d:74:44:1a:
-         0c:33:db:46:09:3a:04:28:1e:7c:ce:ba:a9:19:87:2d:a6:e7:
-         65:f2:65:e7:6c:84:86:36:ea:cd:a3:72:aa:0b:59:70:bc:36:
-         49:68:49:ee:90:1a:ae:09:26:6d:b3:b1:d5:63:9e:85:63:5f:
-         ea:bd:9b:b1:3e:d8:52:69:ef:c3:d5:ee:ea:4c:c1:06:b5:85:
-         db:4a:f5:0a:8f:a4:9e:ff:13:2f:ff:d2:64:a4:f9:be:16:00:
-         e0:1b:f6:e1:6a:03:89:03:e6:aa:24:88:56:d0:81:bd:a2:85:
-         df:11:6c:a8:73:01:62:99:60:97:5c:73:56:5c:04:0f:fd:72:
-         5a:00:b0:74:2c:16:c8:62:ab:40:3a:74:0b:3d:6f:01:29:b7:
-         43:d2:9d:e4:05:32:30:2c:ec:64:4d:22:f3:67:c9:d7:a4:b1:
-         48:7c:28:c2
+         b7:7f:2b:76:bf:85:54:d4:28:2b:86:e3:62:78:ca:39:c8:71:
+         67:00:f7:11:65:95:5b:ca:91:f4:f1:97:38:00:01:01:73:9b:
+         66:a1:69:7f:16:d7:08:0f:85:9a:c7:25:9e:28:5a:e9:de:4b:
+         96:d0:4f:9b:83:9c:a0:de:f1:6b:69:55:2c:ec:26:71:d2:f2:
+         cf:66:96:47:0c:9e:c8:6a:73:2b:4d:24:65:31:74:5c:2f:11:
+         89:3b:da:4d:91:3e:e1:31:01:87:80:a3:eb:b5:7e:6a:13:bc:
+         ec:ea:af:de:9d:19:42:56:fe:58:e9:1c:4c:f8:7b:11:e3:0a:
+         68:31:22:04:a2:c7:e9:86:03:2a:53:43:bb:fd:9a:a3:79:2f:
+         d6:0a:9b:82:fd:57:11:1f:7d:34:68:5c:5c:86:31:1a:6c:e9:
+         39:88:76:b3:4c:d6:79:bd:35:f9:1e:d6:f0:de:80:96:44:c8:
+         da:bb:cf:52:f5:95:26:60:2d:4a:23:d9:6b:26:86:15:b6:6c:
+         08:e2:ff:90:6b:21:29:9d:96:22:d5:f9:51:6c:25:72:64:47:
+         5b:8a:32:30:1f:f1:3e:07:57:b5:e4:c3:70:ce:ba:49:0a:60:
+         cd:37:04:2e:3a:67:b4:0c:37:57:09:b3:e0:a3:94:94:b9:ce:
+         33:30:44:a4
 -----BEGIN CERTIFICATE-----
-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
+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
+CmDNNwQuOme0DDdXCbPgo5SUuc4zMESk
 -----END CERTIFICATE-----
