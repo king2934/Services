@@ -102,7 +102,24 @@
 	
 #####	为服务端编写openvpn的配置文件
 	
+	mkdir /usr/local/openVPN/etc
+	cp /usr/src/soft/openvpn-2.4.6/sample/sample-config-files/server.conf /usr/local/openVPN/etc/
+
+#####	生成ta.key文件 （防DDos攻击、UDP淹没等恶意攻击）
+
+	sbin/openvpn --genkey --secret /usr/local/openVPN/ta.key
 	
+	grep -v ^# /usr/local/openVPN/etc/server.conf | grep -v ^$ | grep -v  ^\;
+	
+		ca		/usr/local/openVPN/easy-rsa/pki/ca.crt
+		cert	/usr/local/openVPN/easy-rsa/pki/server.crt
+		key		/usr/local/openVPN/easy-rsa/pki/server.key 
+		dh 		/usr/local/openVPN/easy-rsa/pki/dh.pem
+		tls-auth /usr/local/openVPN/ta.key 0 
+	
+#####	启动服务
 
-
+	/usr/local/openVPN/sbin/openvpn /usr/local/openVPN/etc/server.conf
+	
+#####	客户端配置
 		
