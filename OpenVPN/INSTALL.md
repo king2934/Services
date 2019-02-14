@@ -119,7 +119,7 @@
 	
 #####	启动服务
 
-	/usr/local/openVPN/sbin/openvpn /usr/local/openVPN/etc/server.conf
+	/usr/local/openVPN/sbin/openvpn /usr/local/openVPN/etc/server.conf &
 	
 #####	客户端配置
 		
