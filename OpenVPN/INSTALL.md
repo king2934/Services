@@ -107,7 +107,7 @@
 
 #####	生成ta.key文件 （防DDos攻击、UDP淹没等恶意攻击）
 
-	sbin/openvpn --genkey --secret /usr/local/openVPN/ta.key
+	/usr/local/openVPN/sbin/openvpn --genkey --secret /usr/local/openVPN/ta.key
 	
 	grep -v ^# /usr/local/openVPN/etc/server.conf | grep -v ^$ | grep -v  ^\;
 	
@@ -120,6 +120,10 @@
 #####	启动服务
 
 	/usr/local/openVPN/sbin/openvpn /usr/local/openVPN/etc/server.conf &
+
+#####	开放端口
+	firewall-cmd --zone=public --add-port=1194/tcp --permanent
+	firewall-cmd --reload
 	
 #####	客户端配置
 		
