@@ -21,3 +21,7 @@
 	
 #####	配置文件	
 	/etc/shadowsocks-r/config.json
+	
+#####	一键安装最新内核并开启 BBR 脚本
+	
+	wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
