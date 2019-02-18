@@ -1,9 +1,5 @@
-# 安装
+#	SSR+BBR安装
 	
-	chmod +x shadowsocks.sh
-	./shadowsocks.sh 2>&1 | tee shadowsocks.log
-	
-
 #####	安装步骤
 
 	wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
