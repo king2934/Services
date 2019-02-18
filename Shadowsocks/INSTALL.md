@@ -18,6 +18,26 @@
 #####	配置文件	
 	/etc/shadowsocks-r/config.json
 	
+	{
+		"server":"0.0.0.0",
+		"local_address":"127.0.0.1",
+		"local_port":1080,
+		"port_password":{
+			"2018":"password",
+			"2019":"password"
+		},
+		"timeout":120,
+		"method":"chacha20-ietf",
+		"protocol":"origin",
+		"protocol_param":"",
+		"obfs":"http_simple_compatible",
+		"obfs_param":"",
+		"redirect":"",
+		"dns_ipv6":false,
+		"fast_open":false,
+		"workers":1
+	}
+	
 #####	一键安装最新内核并开启 BBR 脚本
 	
 	wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
