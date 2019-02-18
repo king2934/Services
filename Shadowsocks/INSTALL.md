@@ -38,7 +38,14 @@
 		"fast_open":false,
 		"workers":1
 	}
-	
+
+#####	开放端口
+
+	firewall-cmd --zone=public --add-port=2018/tcp --permanent
+	firewall-cmd --zone=public --add-port=2019/tcp --permanent
+	firewall-cmd --zone=public --add-port=2020/tcp --permanent
+	firewall-cmd --reload
+
 #####	一键安装最新内核并开启 BBR 脚本
 	
 	wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
