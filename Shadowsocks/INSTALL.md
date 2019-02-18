@@ -24,7 +24,8 @@
 		"local_port":1080,
 		"port_password":{
 			"2018":"password",
-			"2019":"password"
+			"2019":"password",
+			"2020":"password"
 		},
 		"timeout":120,
 		"method":"chacha20-ietf",
