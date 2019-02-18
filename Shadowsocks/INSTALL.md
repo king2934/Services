@@ -42,3 +42,5 @@
 #####	一键安装最新内核并开启 BBR 脚本
 	
 	wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+
+#####	End 重启电脑
