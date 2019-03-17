@@ -98,7 +98,16 @@
 
 	自动更新证书日期
 	./letsencrypt-auto certonly --renew-by-default --email king2934@126.com -d *.lanhuispace.com
+	
+####	查看域名https证书到期时间
 
+	1.通过域名获取：
+	echo | openssl s_client -servername lanhuispace.com -connect lanhuispace.com:443 2>/dev/null | openssl x509 -noout -dates
+	notBefore=Dec 17 00:43:33 2018 GMT（起）
+	notAfter=Mar 17 00:43:33 2019 GMT（止）
+	
+	2.通过证书获取
+	openssl x509 -in fullchain.pem  -noout -text
 END
 
 
