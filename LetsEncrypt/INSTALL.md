@@ -96,6 +96,11 @@
 	#证书私钥存放位置
 	SSLCertificateKeyFile /etc/letsencrypt/live/lanhuispace.com/privkey.pem
 
+	自动更新证书日期
+	./letsencrypt-auto certonly --renew-by-default --email king2934@126.com -d *.lanhuispace.com
+
 END
+
+
  
 	
