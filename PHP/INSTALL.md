@@ -7,9 +7,15 @@
 	tar -zxf php-7.2.6.tar.gz
 	cd php-7.2.6
 	
+	export PHP_OPENSSL_DIR=yes
+
 	./configure --prefix=/usr/local/php \
-	--with-apxs2=/usr/local/apache/bin/apxs \
-	--with-config-file-path=/usr/local/php/etc
+	--with-apxs2=/usr/local/apache/bin/apxs \ 
+	--with-config-file-path=/usr/local/php/etc \  
+	--with-openssl-dir=/usr/include/openssl \
+	--with-mysqli=/usr/local/mariadb/bin/mysql_config \
+	--disable-fileinfo \
+	--enable-mbstring 
 	
 	make -j4
 	make install
@@ -30,3 +36,5 @@
 	
 	make -j4
 	make install
+	
+	

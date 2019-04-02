@@ -2,6 +2,12 @@
 /*
  * Copyright 2019-2020 lanhuispace.com, Inc.
  * Email: king2934@126.com
+ * @see http://docs.mongodb.org/manual/reference/connection-string/
+ * @see http://php.net/manual/en/mongodb-driver-manager.construct.php
+ * @see http://php.net/manual/en/mongodb.persistence.php#mongodb.persistence.typemaps
+ * @param string $uri           MongoDB connection string
+ * @param array  $uriOptions    Additional connection string options
+ * @param array  $driverOptions Driver-specific options
  */
 
 namespace com\lanhuispace\MongoDB;
