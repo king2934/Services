@@ -13,7 +13,6 @@
 	--with-apxs2=/usr/local/apache/bin/apxs \ 
 	--with-config-file-path=/usr/local/php/etc \  
 	--with-openssl-dir=/usr/include/openssl \
-	--with-mysqli=/usr/local/mariadb/bin/mysql_config \
 	--disable-fileinfo \
 	--enable-mbstring 
 	
