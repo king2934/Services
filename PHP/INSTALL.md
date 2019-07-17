@@ -10,11 +10,13 @@
 	export PHP_OPENSSL_DIR=yes
 
 	./configure --prefix=/usr/local/php \
-	--with-apxs2=/usr/local/apache/bin/apxs \ 
-	--with-config-file-path=/usr/local/php/etc \  
+	--with-apxs2=/usr/local/apache/bin/apxs \
+	--with-config-file-path=/usr/local/php/etc \
+	--with-mysqli=/usr/local/mariadb/bin/mysql_config \
 	--with-openssl-dir=/usr/include/openssl \
 	--disable-fileinfo \
 	--enable-mbstring 
+	
 	
 	make -j4
 	make install
