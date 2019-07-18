@@ -37,5 +37,14 @@
 	
 	make -j4
 	make install
-	
+
+#	段错误
+
+#####	 开启core dump 
+	ulimit -c unlimited 
+#####	重新运行代码，输出：段错误 (core dumped)，同时生成core dump文件
+	php index.php
+####	使用gdb调试coredump文件
+	gdb php -c core.[\d]+
+	(gdb) bt
 	
