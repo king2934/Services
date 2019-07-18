@@ -56,4 +56,18 @@
 	
 	chown -R mariadb:mariadb /usr/local/mariadb
 	
+#	systemctl
+	
+	vi /etc/systemd/system/mariadb.service
+	
+		[Unit]
+		Description=The MariaDB Database Server
+
+		[Service]
+		Type=simple
+		ExecStart=/usr/local/mariadb/bin/mysqld_safe --defaults-file=/usr/local/mariadb/etc/my.cnf 
+		ExecStop=/bin/kill -WINCH ${MAINPID}
+
+		[Install]
+		WantedBy=multi-user.target
 	
