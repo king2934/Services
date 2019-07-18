@@ -38,7 +38,7 @@
 	make -j4
 	make install
 
-#	段错误
+#	段错误 Segmentation fault
 
 #####	 开启core dump 
 	ulimit -c unlimited 
