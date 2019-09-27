@@ -47,5 +47,14 @@
 ##### 开启 SSL （https） 
 	<Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
 	
+##### 配置基于域名的虚拟主机
+	<Host name="java.lanhuispace.com"  appBase="webapps" unpackWARs="true" autoDeploy="true">
+		<Alias>java.lanhuispace.com</Alias>
+		<Alias>www.java.lanhuispace.com</Alias>
+		<Context path="" docBase="/usr/local/apache/htdocs/www/java.lanhuispace.com" debug="0" reloadable="false" crossContext="true"/> 
+		<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+			prefix="java_lanhuispace_com_access_log" suffix=".txt"
+			pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+	</Host>
 	
 #END 结束
