@@ -110,6 +110,7 @@
 	openssl x509 -in fullchain.pem  -noout -text
 	
 ####	tomcat
+
 	--导出.p12格式的证书
 	openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out zyxx_letsencrypt.p12 -name tomcat_letsencrypt
 
