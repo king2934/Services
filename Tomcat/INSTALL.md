@@ -8,10 +8,11 @@
 	bin/startup.sh //启动 | 停止 bin/shutdown.sh
 	
 ###	配置文件 server.xml
-	#####	端口为 8080
+
+#####	端口为 8080
 	<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
 	
-	#####	https 端口为 8443
+#####	https 端口为 8443
 	<Connector
 		protocol="org.apache.coyote.http11.Http11AprProtocol"
 		port="8443" maxThreads="200"
@@ -19,8 +20,8 @@
 		SSLCertificateFile="/etc/letsencrypt/live/lanhuispace.com/fullchain.pem"
 		SSLCertificateKeyFile="/etc/letsencrypt/live/lanhuispace.com/privkey.pem"
 		SSLVerifyClient="optional" SSLProtocol="TLSv1+TLSv1.1+TLSv1.2"/>
-		   
-	##### 开启 SSL （https） 
+
+##### 开启 SSL （https） 
 	<Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
 	
 	
