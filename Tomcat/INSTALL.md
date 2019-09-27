@@ -1,5 +1,5 @@
 #	Tomcat 9 安装
-===================================
+
 	wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.26/bin/apache-tomcat-9.0.26.zip
 	unzip apache-tomcat-9.0.26.zip
 	
