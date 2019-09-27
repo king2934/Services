@@ -1,5 +1,28 @@
 #	Tomcat 9 安装
 
+###	一、安装 apr
+	wget http://mirrors.tuna.tsinghua.edu.cn/apache//apr/apr-1.7.0.tar.gz
+	tar -zxvf apr-1.7.0.tar.gz
+	cd apr-1.7.0
+	./configure --prefix=/usr/local/apr
+	make && make install
+	
+###	二、安装 apr-util
+	wget http://mirrors.tuna.tsinghua.edu.cn/apache//apr/apr-util-1.6.1.tar.gz
+	tar -zxvf apr-util-1.6.1.tar.gz
+	cd apr-util-1.6.1
+	./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr
+	make && make install
+	
+###	三、安装	tomcat-native
+	wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-connectors/native/1.2.23/source/tomcat-native-1.2.23-src.tar.gz
+	tar -zxvf tomcat-native-1.2.23-src.tar.gz
+	cd tomcat-native-1.2.23-src/native
+	./configure --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr-util
+	make && make install
+	
+	
+###	四、安装	tomcat 9
 	wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.26/bin/apache-tomcat-9.0.26.zip
 	unzip apache-tomcat-9.0.26.zip
 	
