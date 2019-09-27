@@ -108,6 +108,15 @@
 	
 	2.通过证书获取
 	openssl x509 -in fullchain.pem  -noout -text
+	
+####	tomcat
+	--导出.p12格式的证书
+	openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out zyxx_letsencrypt.p12 -name tomcat_letsencrypt
+
+	--再将证书由.p12格式转换成.jks格式
+	keytool -importkeystore -deststorepass 'zxxx_123' -destkeypass 'zxxx_123' -destkeystore zyxx_letsencrypt.jks -srckeystore zyxx_letsencrypt.p12 -srcstoretype PKCS12 -srcstorepass 'zxxx_123' -alias tomcat_letsencrypt
+
+
 END
 
 

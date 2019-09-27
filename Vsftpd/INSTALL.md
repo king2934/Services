@@ -61,8 +61,8 @@ VSFTPD vsftpd 安装与配置 全过程 测试平台 阿里云 ecs
 	
 	/usr/local/vsftpd/bin/vsftpd  /usr/local/vsftpd/conf/vsftpd.conf &
 	
-	firewall-cmd --zome=public --add-port=20-21/tcp --permanent
-	firewall-cmd --zome=public --add-port=10060-10090/tcp --permanent
+	firewall-cmd --zone=public --add-port=20-21/tcp --permanent
+	firewall-cmd --zone=public --add-port=10060-10090/tcp --permanent
 	firewall-cmd --reload
 	
 #END 结束
