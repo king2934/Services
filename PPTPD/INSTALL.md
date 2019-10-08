@@ -32,9 +32,17 @@ VSFTPD vsftpd 安装与配置 全过程 测试平台 阿里云 ecs
 	firewall-cmd --zone=public --add-port=1723/tcp --permanent
 	firewall-cmd --reload
 	
+#####	可选
+	
+	vi /etc/sysctl.conf
+		net.ipv4.ip_forward=1
+	sysctl -p
+	
 #####	启动
 	systemctl start pptpd
+	
 #####	开机启动
+
 	systemctl enable pptpd
 	
 #END 结束
