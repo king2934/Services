@@ -11,6 +11,10 @@ import com.alibaba.otter.canal.protocol.CanalEntry.EntryType;
 import com.alibaba.otter.canal.protocol.CanalEntry.EventType;
 import com.alibaba.otter.canal.protocol.CanalEntry.RowChange;
 import com.alibaba.otter.canal.protocol.CanalEntry.RowData;
+import com.alibaba.otter.canal.protocol.Message;
+
+import com.google.protobuf.ByteString;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 public class Test
 {
@@ -44,6 +48,8 @@ public class Test
 					emptyCount = 0;
 					// System.out.printf("message[batchId=%s,size=%s] \n", batchId, size);
 					printEntry(message.getEntries());
+					//System.out.println(message.toString());
+					showAllMessage(message);
 				}
 
 				connector.ack(batchId); // 提交确认
@@ -75,6 +81,8 @@ public class Test
 											 entry.getHeader().getLogfileName(), entry.getHeader().getLogfileOffset(),
 											 entry.getHeader().getSchemaName(), entry.getHeader().getTableName(),
 											 eventType));
+			System.out.println(entry.toString());
+			
 
 			for (RowData rowData : rowChage.getRowDatasList()) {
 				if (eventType == EventType.DELETE) {
@@ -94,6 +102,55 @@ public class Test
 	private static void printColumn(List<Column> columns) {
 		for (Column column : columns) {
 			System.out.println(column.getName() + " : " + column.getValue() + "    update=" + column.getUpdated());
+		}
+	}
+	
+	public static void showAllMessage(Message message)
+	{
+		List<Entry> entries = message.getEntries();
+		for(Entry entry:entries)
+		{
+			
+			ByteString storeValue = entry.getStoreValue();
+			System.out.println("showAllMessage.");
+			try {
+				RowChange rowChage = RowChange.parseFrom(entry.getStoreValue());
+				List<RowData> rowDatas = rowChage.getRowDatasList();
+				
+				System.out.println(rowDatas.toString());
+				
+			} catch (InvalidProtocolBufferException e) {
+				e.printStackTrace();
+			}
+			
+/* 			   Header header = entry.getHeader();
+					header.getLogfileName();
+					header.getLogfileOffset();
+					header.getExecuteTime();
+					header.getSchemaName();
+					header.getEventType();
+			   EntryType entryType = entry.getEntryType();
+			   ByteString storeValue = entry.getStoreValue();
+			   try {
+				   RowChange rowChage = RowChange.parseFrom(entry.getStoreValue());
+				   List<RowData> rowDatas = rowChage.getRowDatasList();
+				   for(RowData rowData:rowDatas){
+					   List<Column> afterColumns = rowData.getAfterColumnsList();//用于非delete操作
+					   List<Column> beforeColumns = rowData.getBeforeColumnsList();//用于delete操作
+					   for(Column afterColumn:afterColumns){
+						   afterColumn.getIndex();
+						   afterColumn.getMysqlType();
+						   afterColumn.getName();
+						   afterColumn.getIsKey();
+						   afterColumn.getUpdated();
+						   afterColumn.getIsNull();
+						   afterColumn.getValue();
+					   }
+				   }
+			   } catch (InvalidProtocolBufferException e) {
+				   e.printStackTrace();
+			   }
+ */	 
 		}
 	}
 

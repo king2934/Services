@@ -1,0 +1,1 @@
+# MySQL 的说明文件 安装说明请查看 INSTALL.md
