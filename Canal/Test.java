@@ -11,6 +11,7 @@ import com.alibaba.otter.canal.protocol.CanalEntry.EntryType;
 import com.alibaba.otter.canal.protocol.CanalEntry.EventType;
 import com.alibaba.otter.canal.protocol.CanalEntry.RowChange;
 import com.alibaba.otter.canal.protocol.CanalEntry.RowData;
+import com.alibaba.otter.canal.protocol.CanalEntry.Header;
 import com.alibaba.otter.canal.protocol.Message;
 
 import com.google.protobuf.ByteString;
@@ -20,7 +21,7 @@ public class Test
 {
 	public static void main(String[] args)
 	{
-		InetSocketAddress  isa = new InetSocketAddress("113.31.112.27",11111);
+		InetSocketAddress  isa = new InetSocketAddress("127.0.0.1",11111);
 		//System.out.println(isa.getHostName());
 		System.out.println( "InetSocketAddress." );
 
@@ -39,7 +40,7 @@ public class Test
 				int size = message.getEntries().size();
 				if (batchId == -1 || size == 0) {
 					emptyCount++;
-					System.out.println("empty count : " + emptyCount);
+					//System.out.println("empty count : " + emptyCount);
 					try {
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
@@ -47,7 +48,7 @@ public class Test
 				} else {
 					emptyCount = 0;
 					// System.out.printf("message[batchId=%s,size=%s] \n", batchId, size);
-					printEntry(message.getEntries());
+					//printEntry(message.getEntries());
 					//System.out.println(message.toString());
 					showAllMessage(message);
 				}
@@ -77,11 +78,13 @@ public class Test
 			}
 
 			EventType eventType = rowChage.getEventType();
+			//System.out.println(entry.toString());
+			/***
 			System.out.println(String.format("================&gt; binlog[%s:%s] , name[%s,%s] , eventType : %s",
 											 entry.getHeader().getLogfileName(), entry.getHeader().getLogfileOffset(),
 											 entry.getHeader().getSchemaName(), entry.getHeader().getTableName(),
 											 eventType));
-			System.out.println(entry.toString());
+			/**/
 			
 
 			for (RowData rowData : rowChage.getRowDatasList()) {
@@ -111,7 +114,7 @@ public class Test
 		for(Entry entry:entries)
 		{
 			
-			ByteString storeValue = entry.getStoreValue();
+/* 			ByteString storeValue = entry.getStoreValue();
 			System.out.println("showAllMessage.");
 			try {
 				RowChange rowChage = RowChange.parseFrom(entry.getStoreValue());
@@ -122,18 +125,23 @@ public class Test
 			} catch (InvalidProtocolBufferException e) {
 				e.printStackTrace();
 			}
+ */			
+			Header header = entry.getHeader();
+			header.getLogfileName();
+			header.getLogfileOffset();
+			header.getExecuteTime();
+			header.getSchemaName();
+			header.getEventType();
 			
-/* 			   Header header = entry.getHeader();
-					header.getLogfileName();
-					header.getLogfileOffset();
-					header.getExecuteTime();
-					header.getSchemaName();
-					header.getEventType();
-			   EntryType entryType = entry.getEntryType();
-			   ByteString storeValue = entry.getStoreValue();
+			//System.out.println(header.getSchemaName());
+			System.out.println(header.toString());
+			
+			EntryType entryType = entry.getEntryType();
+			ByteString storeValue = entry.getStoreValue();
 			   try {
 				   RowChange rowChage = RowChange.parseFrom(entry.getStoreValue());
 				   List<RowData> rowDatas = rowChage.getRowDatasList();
+				   System.out.println(rowDatas.toString());
 				   for(RowData rowData:rowDatas){
 					   List<Column> afterColumns = rowData.getAfterColumnsList();//用于非delete操作
 					   List<Column> beforeColumns = rowData.getBeforeColumnsList();//用于delete操作
@@ -150,7 +158,7 @@ public class Test
 			   } catch (InvalidProtocolBufferException e) {
 				   e.printStackTrace();
 			   }
- */	 
+	 
 		}
 	}
 
