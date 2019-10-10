@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Created-By: 11.0.1 (Oracle Corporation)
+Main-Class: Test
+Class-Path: .;
+  lib/canal.client-1.1.4.jar;
+  lib/commons-beanutils-1.9.4.jar;
+  lib/commons-lang-2.6.jar;
+  lib/slf4j-api-1.7.28.jar;
+  lib/slf4j-simple-1.7.28.jar;
+  lib/protobuf-java-3.10.0.jar;
+  lib/protobuf-java-2.4.1-shaded.jar;
+Import-Package:com.alibaba.otter.canal.client.CanalConnectors;com.alibaba.otter.canal.client.CanalConnector;com.alibaba.otter.canal.common.utils.AddressUtils;com.alibaba.otter.canal.protocol.Message;com.alibaba.otter.canal.protocol.CanalEntry.Column;com.alibaba.otter.canal.protocol.CanalEntry.Entry;com.alibaba.otter.canal.protocol.CanalEntry.EntryType;com.alibaba.otter.canal.protocol.CanalEntry.EventType;com.alibaba.otter.canal.protocol.CanalEntry.RowChange;com.alibaba.otter.canal.protocol.CanalEntry.RowData;
+
