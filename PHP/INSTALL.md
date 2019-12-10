@@ -2,19 +2,17 @@
 
 ## 1. PHP安装 apache(httpd)
 	yum install libxml2-devel 
-	wget http://php.net/distributions/php-7.2.6.tar.gz
+	wget http://php.net/distributions/php-7.4.0.tar.gz
 	
-	tar -zxf php-7.2.6.tar.gz
-	cd php-7.2.6
+	tar -zxf php-7.4.0.tar.gz
+	cd php-7.4.0
 	
 	export PHP_OPENSSL_DIR=yes
 
 	./configure --prefix=/usr/local/php \
 	--with-apxs2=/usr/local/apache/bin/apxs \
 	--with-config-file-path=/usr/local/php/etc \
-	--with-mysqli=/usr/local/mariadb/bin/mysql_config \
 	--with-openssl-dir=/usr/include/openssl \
-	--disable-fileinfo \
 	--enable-mbstring 
 	
 	
@@ -26,8 +24,12 @@
 	/usr/local/php/bin/phpize 
 	mkdir ext
 	cp -r ../mysqlnd ext/
+#####	mariadb 10.3.11
 	cp /usr/local/mariadb/include/mysql/server/*.h .
 	cp -r /usr/local/mariadb/include/mysql/server/mysql .
+#####	mariadb 10.4.10 增加部分
+	cp -r /usr/local/mariadb/include/mysql/server/private/*.h .
+	cp -r /usr/local/mariadb/include/mysql/server/private/atomic .
 	
 	
 	./configure --with-php-config=/usr/local/php/bin/php-config \
