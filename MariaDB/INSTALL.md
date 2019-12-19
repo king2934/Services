@@ -110,6 +110,6 @@
 	change master to master_log_file='mysql-bin-master.000002',master_log_pos=245;
 	slave start;
 	show slave status\G
-		Slave_IO_Running: Yes         #yes代表已在同步
-        Slave_SQL_Running: Yes
+		Slave_IO_Running: Yes #yes代表已在同步
+		Slave_SQL_Running: Yes
 	
