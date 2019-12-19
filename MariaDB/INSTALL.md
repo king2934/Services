@@ -70,4 +70,46 @@
 
 		[Install]
 		WantedBy=multi-user.target
+		
+#	主从配置
+###	master节点
+#####	my.cnf
+	[mysqld]
+	log-bin=mysql-bin-master          #启用二进制日志
+	server-id=1                       #本机数据库ID 标示
+	binlog-do-db=zn                   #可以被从服务器复制的库, 二进制需要同步的数据库名
+	binlog-ignore-db=mysql            #不可以被从服务器复制的库
+#####	SQL
+	grant replication slave on *.* to slave@'%'  identified by "123456";
+	show master status;
+	
+	mysqldump -uroot -ppass 要导出数据库名 > databak.sql
+	
+###	slave节点
+#####	my.cnf
+	[mysqld]
+	server-id=2
+#####	SQL
+	show variables like '%version%';
+	mysql -uslave -p123456 -h ip地址
+	
+	mysql -uroot -ppass 要入的数据库名 < databak.sql
+	
+#####	库中执行
+	stop slave;
+	change master to master_host='ip地址',master_user='slave',master_password='123456';
+	start slave;
+	
+#	主从不同步修复
+###	master节点 查看bin-log的位置
+	show master status; 
+	show binlog events\G
+###	slave节点
+#####	根据show master status的结果，二进制数据库记录回归
+	stop slave;
+	change master to master_log_file='mysql-bin-master.000002',master_log_pos=245;
+	slave start;
+	show slave status\G
+		Slave_IO_Running: Yes         #yes代表已在同步
+        Slave_SQL_Running: Yes
 	
